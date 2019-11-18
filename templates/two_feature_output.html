@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+<center>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <style type="text/css">
+                @media only screen and (max-width: 1000px) {
+            .page {
+                width: 90%;
+            }
+        }
+            .tg  {border-collapse:collapse;border-spacing:0;border-color:#9ABAD9;}
+            .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#9ABAD9;color:#444;background-color:#EBF5FF;}
+            .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#9ABAD9;color:#fff;background-color:#409cff;}
+            .tg .tg-lboi{border-color:inherit;text-align:left;vertical-align:middle}
+            .tg .tg-mxot{font-size:18px;font-family:"Arial Black", Gadget, sans-serif !important;;border-color:inherit;text-align:center;vertical-align:middle}
+            .tg .tg-baqh{text-align:center;vertical-align:top}
+            .tg .tg-opxt{background-color:#9aff99;color:#000000;border-color:inherit;text-align:center;vertical-align:middle}
+            .tg .tg-0lax{text-align:left;vertical-align:top}
+            .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+            </style>
+            <table class="tg">
+              <tr>
+                <th class="tg-mxot" colspan="5">{{suggested_choice.TEAM_HOME}} home games in {{month}}</th>
+              </tr>
+              <tr>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-lboi"></td>
+                <td class="tg-0pky"></td>
+                <td class="tg-opxt"><span style="font-weight:bold">You should go to:</span><br><br>
+                  {{ suggested_choice.TEAM_AWAY }} @ {{ suggested_choice.TEAM_HOME}}<br>
+                  {{ suggested_choice.DATE_HOME }}<br>
+                  There is a {{suggested_choice.PROB_HOME_WIN}}% chance that the {{suggested_choice.TEAM_HOME}} will win
+                  <br>Number of all stars: {{suggested_choice.NUM_ALL_STARS}}<br>
+                  Projected # of 3 pointers made: {{suggested_choice.THREE_POINT_TOT_PRED}}<br>
+                  Projected # of assists: {{suggested_choice.A_TOT_PRED}}</td>
+                <td class="tg-lboi"></td>
+                <td class="tg-lboi"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax"></td>
+                <td class="tg-baqh"></td>
+                <td class="tg-baqh">You might also enjoy: <br>
+                  {{ feature_one_choice.TEAM_AWAY }} @ {{ feature_one_choice.TEAM_HOME}}<br>
+                  Game date: {{ feature_one_choice.DATE_HOME }}<br>
+                  There is a {{feature_one_choice.PROB_HOME_WIN}}% chance that the {{feature_one_choice.TEAM_HOME}} will win
+                  <br>Number of all stars: {{feature_one_choice.NUM_ALL_STARS}}<br>
+                  Projected # of 3 pointers made: {{feature_one_choice.THREE_POINT_TOT_PRED}}<br>
+                  Projected # of assists: {{feature_one_choice.A_TOT_PRED}}</td>
+                <td class="tg-baqh"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                  <td class="tg-baqh" colspan="3"><a href="https://www.ticketmaster.com/nba">Buy tickets</a></td>
+                  <td class="tg-0lax"></td>
+                  <td class="tg-0lax"></td>
+              </tr>
+            </table>
+    </form>
+</center>
+{% endblock %}

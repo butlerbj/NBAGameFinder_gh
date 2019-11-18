@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+<center>
+    <h1>NBA Game Finder</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <style type="text/css">
+          .tg  {border-collapse:collapse;border-spacing:0;border-color:#bbb;}
+          .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#E0FFEB;}
+          .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#bbb;color:#493F3F;background-color:#9DE0AD;}
+          .tg .tg-b420{font-size:18px;border-color:#ffffff;text-align:center;vertical-align:top}
+          .tg .tg-cw9i{font-size:28px;text-align:center;vertical-align:top}
+          </style>
+          <table class="tg">
+            <tr>
+              <th class="tg-b420" colspan="4">{{ form.team.label }}<br>{{ form.team(size=5) }}</th>
+            </tr>
+            <tr>
+              <td class="tg-b420" colspan="4">{{ form.month.label }}<br>{{ form.month(size=7) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-b420" colspan="2">{{ form.feature_one.label}}<br>{{ form.feature_one(size=4) }}</td>
+              <td class="tg-b420" colspan="2">{{ form.feature_two.label}}<br>{{ form.feature_two(size=4) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-cw9i" colspan="4">{{ form.submit() }}</td>
+            </tr>
+          </table>
+    </form>
+  </center>
+{% endblock %}
